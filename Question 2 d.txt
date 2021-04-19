@@ -1,0 +1,1 @@
+SELECT m.Lastname, m.FirstName, m.JoinDate FROM Member m WHERE EXISTS (SELECT * FROM Entry e INNER JOIN Tournament t ON e.TourID = t.TourID WHERE e.MemberID = m.MemberID and Year(m.JoinDate) = e.Year);
